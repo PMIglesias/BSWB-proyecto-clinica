@@ -2,38 +2,10 @@ doctype html
 html
   head
     title Asignar Turno
-    style.
-      body { font-family: Arial, sans-serif; margin: 20px; }
-      form { 
-        max-width: 400px; 
-        margin: auto; 
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      input, select, button { 
-        padding: 8px; 
-        border-radius: 6px;
-        border: 1px solid #ccc;
-      }
-      button { 
-        background-color: #28a745; 
-        color: white;
-        border: none;
-        font-weight: bold;
-      }
-      button:hover { background-color: #218838; }
-      nav { margin-bottom: 20px; }
-      .btn { 
-        display: inline-block; 
-        padding: 6px 14px; 
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-      }
-      .btn:hover { background-color: #0056b3; }
+    link(rel="stylesheet" href="/css/styles.css")
+
   body
+    button.theme-toggle(id="themeBtn") 🌙
     nav
       a.btn(href="/") ← Volver al Inicio
     h1 Asignar Turno
@@ -47,3 +19,18 @@ html
       input(type="datetime-local" name="fecha" required)
 
       button(type="submit") Asignar Turno
+    script.
+      const themeBtn = document.getElementById("themeBtn");
+      const body = document.body;
+
+      if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        themeBtn.textContent = "☀️";
+      }
+
+      themeBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        const isDark = body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        themeBtn.textContent = isDark ? "☀️" : "🌙";
+      });
