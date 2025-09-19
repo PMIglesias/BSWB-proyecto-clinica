@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    title= titulo
+    style.
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      nav { margin-bottom: 20px; }
+      .btn { 
+        display: inline-block; 
+        padding: 8px 16px; 
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+      }
+      .btn:hover { background-color: #0056b3; }
+      table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-top: 20px; 
+      }
+      th, td { 
+        border: 1px solid #ccc; 
+        padding: 8px; 
+        text-align: left;
+      }
+      th { background-color: #f4f4f4; }
+  body
+    nav
+      a.btn(href="/") ← Volver al Inicio
+    h1= titulo
+    if pacientes.length
+      table
+        thead
+          tr
+            th ID
+            th Nombre
+            th Edad
+            th Diagnóstico
+            th Turnos
+        tbody
+          each paciente in pacientes
+            tr
+              td= paciente.id
+              td= paciente.nombre
+              td= paciente.edad
+              td= paciente.diagnostico
+              td
+                if paciente.turnos.length
+                  ul
+                    each turno in paciente.turnos
+                      li= turno
+                else
+                  | Sin turnos
+    else
+      p No hay pacientes registrados.

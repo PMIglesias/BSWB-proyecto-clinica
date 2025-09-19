@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= titulo
+    style.
+      body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+      .btn { 
+        display: inline-block; 
+        padding: 10px 20px; 
+        margin: 10px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+      .btn:hover { background-color: #0056b3; }
+  body
+    h1 Clínica - Sistema de Pacientes
+    p Bienvenido al sistema de gestión de pacientes.
+    a.btn(href="/pacientes") Ver Pacientes
+    a.btn(href="/asignar-turno") Asignar Turno
