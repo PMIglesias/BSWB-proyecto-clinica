@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { logger } from "../middlewares/logger.js";
 import { validarPaciente } from "../middlewares/validarPaciente.js";
-import { obtenerPacientes, obtenerPaciente, crearPaciente, actualizarPaciente, eliminarPaciente, vistaAsignarTurno, asignarTurno } from "../controllers/pacientes.controller.js";
+import { obtenerPacientes, obtenerPaciente, crearPaciente, actualizarPaciente, eliminarPaciente, eliminarTurno } from "../controllers/pacientes.controller.js";
 
 const router = Router();
 
@@ -12,7 +12,6 @@ router.get("/:id", obtenerPaciente);
 router.post("/", validarPaciente, crearPaciente);
 router.put("/:id", validarPaciente, actualizarPaciente);
 router.delete("/:id", eliminarPaciente);
-router.get("/asignar-turno", vistaAsignarTurno);
-router.post("/asignar-turno", asignarTurno);
+router.delete("/:pacienteId/turno/:turnoIndex", eliminarTurno);
 
 export default router;

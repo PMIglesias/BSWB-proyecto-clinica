@@ -48,10 +48,28 @@ export async function asignarTurno(req, res) {
   const pacientes = await leerPacientes();
 
   const paciente = pacientes.find(p => p.id === parseInt(pacienteId));
-  if (!paciente) return res.status(404).send("Paciente no encontrado");
+  if (!paciente) return res.status(404).json({ error: "Paciente no encontrado" });
 
   paciente.turnos.push(fecha);
 
   await guardarPacientes(pacientes);
-  res.redirect("/pacientes");
+  res.status(200).json({ message: "Turno asignado", paciente });
 }
+
+export async function eliminarTurno(req, res) {
+  const { pacienteId, turnoIndex } = req.params;
+  const pacientes = await leerPacientes();
+
+  const paciente = pacientes.find(p => p.id === parseInt(pacienteId));
+  if (!paciente) return res.status(404).json({ error: "Paciente no encontrado" });
+
+  if (turnoIndex < 0 || turnoIndex >= paciente.turnos.length) {
+    return res.status(400).json({ error: "Índice de turno inválido" });
+  }
+
+  paciente.turnos.splice(turnoIndex, 1);
+
+  await guardarPacientes(pacientes);
+  res.status(200).json({ message: "Turno eliminado", paciente });
+}
+

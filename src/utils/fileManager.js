@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "fs/promises";
+import path from "path";
 
-const filePath = "./data/pacientes.json";
+const filePath = path.join(process.cwd(), "src/data/pacientes.json");
 
 export async function leerPacientes() {
   try {

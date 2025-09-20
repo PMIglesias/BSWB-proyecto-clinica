@@ -6,11 +6,12 @@ import { vistaAsignarTurno, asignarTurno } from "./controllers/pacientes.control
 const app = express();
 
 app.set("view engine", "pug");
-app.set("views", path.join(process.cwd(), "views"));
+app.set("views", path.join(process.cwd(), "src/views"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // <--- NECESARIO para procesar formularios
 app.use(express.static(path.join(process.cwd(), "public"))); // Servir archivos estáticos
+
 
 // Rutas principales
 app.use("/pacientes", pacientesRoutes);
