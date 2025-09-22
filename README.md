@@ -253,60 +253,6 @@ BSWB-proyecto-clinica/
         └── pacientes.pug       # Lista de pacientes
 ```
 
-## 👨‍💻 Desarrollo
-
-### **Scripts Disponibles**
-
-```bash
-# Iniciar servidor en modo desarrollo
-npm start
-
-# Iniciar con nodemon (auto-reload)
-npm run dev
-
-# Ejecutar tests
-npm test
-
-# Verificar sintaxis
-npm run lint
-
-# Generar documentación
-npm run docs
-```
-
-### **Comandos de Testing**
-
-#### **Probar API con cURL**
-```bash
-# Verificar servidor
-curl http://localhost:3000/api/pacientes
-
-# Crear paciente de prueba
-curl -X POST http://localhost:3000/api/pacientes \
-  -H "Content-Type: application/json" \
-  -d '{"nombre":"Test User","edad":25,"diagnostico":"Test"}'
-
-# Asignar turno de prueba
-curl -X POST http://localhost:3000/api/pacientes/1/turno \
-  -H "Content-Type: application/json" \
-  -d '{"fecha":"2025-12-01","hora":"10:00"}'
-```
-
-#### **Probar con PowerShell**
-```powershell
-# Obtener pacientes
-Invoke-WebRequest -Uri "http://localhost:3000/api/pacientes" -Method GET
-
-# Crear paciente
-$body = @{
-    nombre = "Test PowerShell"
-    edad = 30
-    diagnostico = "Test PS"
-} | ConvertTo-Json
-
-Invoke-WebRequest -Uri "http://localhost:3000/api/pacientes" -Method POST -Body $body -ContentType "application/json"
-```
-
 ## 🧪 Testing
 
 ### **Testing Manual**
@@ -469,11 +415,6 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 - 📊 **Reportes**: Estadísticas avanzadas y exportación
 - 🗄️ **Base de Datos**: Migración a PostgreSQL/MongoDB
 - 🚀 **Deploy**: Configuración para Heroku/Vercel/AWS
-
-
-**🔗 Enlaces:**  
-🌐 Demo: [http://localhost:3000](http://localhost:3000)  
-📂 Repositorio: [GitHub - BSWB-proyecto-clinica](https://github.com/PMIglesias/BSWB-proyecto-clinica)  
 
 ---
 
