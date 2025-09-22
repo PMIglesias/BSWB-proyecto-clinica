@@ -3,7 +3,6 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)
 ![Express](https://img.shields.io/badge/Express-5.1.0-blue.svg)
 ![Pug](https://img.shields.io/badge/Pug-3.0.3-yellow.svg)
-![License](https://img.shields.io/badge/License-MIT-red.svg)
 
 Sistema web completo para la gestión de pacientes y turnos médicos desarrollado con **Node.js**, **Express** y **Pug**. Implementa arquitectura MVC, API REST y una interfaz moderna con tema claro/oscuro.
 
@@ -398,10 +397,6 @@ BSWB-proyecto-clinica/
 - **🧪 Casos de prueba**: 20+ casos validados
 - **⏰ Tiempo de desarrollo**: 3 semanas
 - **✅ Funcionalidades**: 100% implementadas
-
-## 📜 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
 
 ---
 
