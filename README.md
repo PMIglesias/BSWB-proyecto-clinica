@@ -470,11 +470,6 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 - 🗄️ **Base de Datos**: Migración a PostgreSQL/MongoDB
 - 🚀 **Deploy**: Configuración para Heroku/Vercel/AWS
 
----
-
-**📞 Contacto:**  
-📧 Email: [pablo.iglesias@universidad.edu](mailto:pablo.iglesias@universidad.edu)  
-📧 Email: [maximiliano.alem@universidad.edu](mailto:maximiliano.alem@universidad.edu)  
 
 **🔗 Enlaces:**  
 🌐 Demo: [http://localhost:3000](http://localhost:3000)  
